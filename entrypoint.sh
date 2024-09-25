@@ -35,6 +35,8 @@ if [ ! -f /var/lib/cloudflare-warp/reg.json ]; then
         fi
     fi
     # connect to the warp server
+    warp-cli mode proxy
+    warp-cli proxy port 40000
     warp-cli --accept-tos connect
 else
     echo "Warp client already registered, skip registration"
